@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>JD modBlankO</name>
+	<creationDate>October 2013</creationDate>
+	<version>2.0.0</version>
+	<author>JoomDev (Formerly GraphicAholic)</author>
+	<copyright>Copyright (C) 2020 Joomdev, Inc. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>info@joomdev.com</authorEmail>
+	<authorUrl>https://www.joomdev.com</authorUrl>
+
+	<description>
+	<![CDATA[
+		<div class="alert alert-info" style="font-weight: normal;">
+			<h3>JD modBlankO</h3>
+			<p>JD modBlankO is a, 'do nothing until you do something' Joomla! 3.x module. It is designed to allow you to custom build a Joomla! 3.x module with only the programming knowledge of COPY & PASTE!</p>
+			<p>JD modBlankO formerly known as modBlankO - Pro from Graphicaholic is now moved to JoomDev along with other Extensions. <strong>Check out the <a href="https://www.joomdev.com/graphicaholic" target="_blank">Announcement here.</a></strong></p>
+			<a href="https://www.joomdev.com/forum/jd-modblanko" target="_blank">Support</a> | <span>Demo</span> | <a href="https://www.joomdev.com/products/extensions/jd-modblanko" target="_blank">More Details</a>
+		</div>
+	]]>
+	</description>
+
+	<updateservers>
+		<server type="extension" priority="1" name="JD modBlankO">https://joomdev.com/updates/blankomodule.xml</server>
+	</updateservers>
+
+	<files>
+		<filename module="mod_blanko-pro">mod_blanko-pro.php</filename>
+		<folder>js</folder>
+		<folder>css</folder>
+		<folder>tmpl</folder>
+		<folder>images</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_blanko-pro.xml</filename>
+	</files>
+
+	<config>
+		<fields name="params">
+			<!-- General Settings -->
+			<fieldset name="scripts" group="scripts" label="Add scripts">
+				<field name="addScript" type="radio" class="btn-group" default="0" label="Add script paths?" description="">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="scriptLink_1" showon="addScript:1" type="text" default="" label="Script full filename #1" description="Type in the full filename  &amp; extension located in the &#39;modules&#47;mod_blanko-pro&#47;js&#39; folder." class="span4" />
+				<field name="scriptLink_2" showon="addScript:1" type="text" default="" label="Script full filename #2" description="Type in the full filename  &amp; extension located in the &#39;modules&#47;mod_blanko-pro&#47;js&#39; folder." class="span4" />
+				<field name="scriptLink_3" showon="addScript:1" type="text" default="" label="Script full filename #3" description="Type in the full filename  &amp; extension located in the &#39;modules&#47;mod_blanko-pro&#47;js&#39; folder." class="span4" />
+				<field name="scriptLink_4" showon="addScript:1" type="text" default="" label="Script full path #1" description="Type in the complete path of the script location" class="span4" />
+				<field name="scriptLink_5" showon="addScript:1" type="text" default="" label="Script full path #2" description="Type in the complete path of the script location" class="span4" />
+				<field name="scriptLink_6" showon="addScript:1" type="text" default="" label="Script full path #3" description="Type in the complete path of the script location" class="span4" />
+				<field name="addCSS" type="radio" class="btn-group" default="0" label="Add CSS paths?" description="">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="styleLink_1" showon="addCSS:1" type="text" default="" label="CSS full filename #1" description="Type in the full filename  &amp; extension located in the &#39;modules&#47;mod_blanko-pro&#47;css&#39; folder." class="span4" />
+				<field name="styleLink_2" showon="addCSS:1" type="text" default="" label="CSS full filename #2" description="Type in the full filename  &amp; extension located in the &#39;modules&#47;mod_blanko-pro&#47;css&#39; folder." class="span4" />
+				<field name="styleLink_3" showon="addCSS:1" type="text" default="" label="CSS full filename #3" description="Type in the full filename  &amp; extension located in the &#39;modules&#47;mod_blanko-pro&#47;css&#39; folder." class="span4" />
+				<field name="styleLink_4" showon="addCSS:1" type="text" default="" label="CSS full path #1" description="Type in the complete path of the CSS file location" class="span4" />
+				<field name="styleLink_5" showon="addCSS:1" type="text" default="" label="CSS full path #2" description="Type in the complete path of the CSS file location" class="span4" />
+				<field name="styleLink_6" showon="addCSS:1" type="text" default="" label="CSS full path #3" description="Type in the complete path of the CSS file location" class="span4" />
+			</fieldset>
+			<fieldset name="code" group="code" label="Add code">
+				<field name="addCSSdata" type="radio" class="btn-group" default="0" label="Add inline CSS code?" description="">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="cssData" showon="addCSSdata:1" type="textarea" filter="raw" default="" label="CSS inline code" description="" class="span4" rows="20" />
+				<field name="addSourcedata" type="radio" class="btn-group" default="1" label="Add HTML|PHP source code?" description="">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="source_Data" showon="addSourcedata:1" type="textarea" filter="raw" default="&#60;h1&#62;A do nothing until you do something module!&#60;&#47;h1&#62;" label="Source code data" description="HTML|PHP tags supported." class="span4" rows="20" />
+			</fieldset>
+			<!-- Advanced Settings -->
+			<fieldset name="advanced" group="advanced">
+				<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="fieldMODULECLASSSUFFIX" />
+				<field name="cache" type="radio" class="btn-group" default="1" label="Caching" description="Select whether to cache the content of this module">
+					<option value="1">Use global</option>
+					<option value="0">No caching</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+				<field name="documentation" type="docs" default="900" label="" description="" />
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>
